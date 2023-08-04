@@ -1,11 +1,13 @@
 package com.example.userservice.dto;
 
 import com.example.userservice.entity.UserEntity;
+import com.example.userservice.vo.ResponseOrder;
 import com.example.userservice.vo.ResponseUser;
 import lombok.Builder;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class UserDto {
@@ -16,6 +18,8 @@ public class UserDto {
     private Date createdAt;
 
     private String encryptedPwd;
+
+    private List<ResponseOrder> orders;
 
     @Builder
     public UserDto(String email, String name, String pwd, String userId) {

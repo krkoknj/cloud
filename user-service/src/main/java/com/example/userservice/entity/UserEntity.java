@@ -1,6 +1,7 @@
 package com.example.userservice.entity;
 
 import com.example.userservice.dto.UserDto;
+import com.example.userservice.vo.ResponseUser;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -35,6 +36,14 @@ public class UserEntity {
     public UserDto toDto() {
         return UserDto.builder()
                 .pwd(encryptedPwd)
+                .name(name)
+                .email(email)
+                .userId(userId)
+                .build();
+    }
+
+    public ResponseUser toResponseUser() {
+        return ResponseUser.builder()
                 .name(name)
                 .email(email)
                 .userId(userId)
