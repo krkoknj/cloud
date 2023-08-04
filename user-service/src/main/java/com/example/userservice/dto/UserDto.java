@@ -43,6 +43,7 @@ public class UserDto {
                 .userId(userId)
                 .email(email)
                 .name(name)
+                .orders(orders)
                 .build();
     }
 }
