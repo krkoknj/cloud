@@ -16,7 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user-service")
+//@RequestMapping("/user-service")
+@RequestMapping("/")
 @RequiredArgsConstructor
 public class UserController {
 
