@@ -56,6 +56,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity byEmail = userRepository.findByEmail(username);
@@ -66,5 +67,15 @@ public class UserServiceImpl implements UserService {
                 true,true,true,true,new ArrayList<>(
 
         ));
+    }
+
+    @Override
+    public UserDto getUserDetailsByEmail(String username) {
+        UserEntity userEntity = userRepository.findByEmail(username);
+
+        if (userEntity == null) {
+            throw new UsernameNotFoundException(username);
+        }
+        return userEntity.toDto();
     }
 }
