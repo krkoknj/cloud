@@ -75,9 +75,9 @@ public class WebSecurity  {
         http.csrf().disable();
 
         http.authorizeRequests()
-                //.antMatchers("/error/**").permitAll() // public abstract java.lang.String javax.servlet.ServletRequest.getRemoteAddr() is not supported 보기 싫을때 활성화
+                .antMatchers("/error/**").permitAll() // public abstract java.lang.String javax.servlet.ServletRequest.getRemoteAddr() is not supported 보기 싫을때 활성화
                 .antMatchers("/**")
-                .hasIpAddress("127.0.0.1")
+                .hasIpAddress("192.168.200.117")
                 .and()
                 .authenticationManager(authenticationManager)
                 .addFilter(authenticationFilter)
