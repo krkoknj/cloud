@@ -5,3 +5,4 @@ spring:
       name: ecommerce # yml 이름
   profiles:
     active: dev
+#    active: prod
