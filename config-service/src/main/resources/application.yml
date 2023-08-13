@@ -4,10 +4,25 @@ server:
 spring:
   application:
     name: config-service
+  profiles:
+    active: native
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     config:
       server:
+        native:
+          search-locations: file:///${user.home}/native-file-repo
         git:
           uri: https://github.com/krkoknj/git-remote-yml
 #          uri: file://D:\work\git-local-repo
 #          uri: file://D:\study\git-local-repo
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, httptrace, busrefresh
